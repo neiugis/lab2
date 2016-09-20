@@ -19,6 +19,10 @@
                minZoom: 4
             }).addTo(map);
 
+          var marker1 = L.marker([41.870989,-87.6334147]).addTo(map);
+          var marker2 = L.marker([30.4670648,-84.3969412]).addTo(map);
+          marker1.bindPopup("This is Chicago!");
+          marker2.bindPopup("Tallahassee!!");
         </script>
    </body>
 </html>

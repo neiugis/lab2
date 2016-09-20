@@ -81,13 +81,15 @@
                maxZoom: <span style="color:blue">4</span>,
                minZoom: <span style="color:blue">4</span>
             }).addTo(map);
+
+
         &lt;/script&gt;
    &lt;/body&gt;
 &lt;/html&gt;
 </pre>
                     Then, save the document as <code>map2.html</code> in your lab2 folder. Please remember to specify the file extension as <b>.html</b> to make it work. If you did everything right, your map should look like:<br>
                     <iframe src="map/map2.html" width=100% height=520 frameborder=0></iframe><br><br>
-                    You may have noticed that the map is not zoomable. That is because we have set the <code>maxZoom</code> and <code>minZoom</code> to be the same, <i>i.e., 4 which is the zoom level used for initializing the map in <code>setView</code></i>. That way, we could "lock" the map to a certain extent.</li>
+                    You may have noticed that the map is not zoomable. That is because we have set the <code>maxZoom</code> and <code>minZoom</code> to be the same, <i>i.e., 4, which is the zoom level used for initializing the map in <code>setView</code></i>. That way, we could "lock" the map to a certain extent.</li>
               </ul>
 
 
@@ -95,18 +97,34 @@
               <h3><i class="fa fa-paint-brush"></i> Add markers</h3>
                     <p>Now, we have the basemap setup and then we can add some other things to the map. </p>
                     <ul>
-                      <li>Let's add a marker for Chicago (the line should go inside the <code>script</code> section, below the adding tiles part):
+                      <li>Let's add a marker for Chicago. <code>L.marker</code> is used to put markers on the map. Add the following line to the <code>script</code> section, below the adding tile layer part:
                         <pre>
-var marker = L.marker([<span style="color:blue">41.870989,-87.6334147</span>]).addTo(map);</pre>
+<span style="color:#a71d5d">var</span> marker1 = L.marker([<span style="color:blue">41.870989,-87.6334147</span>]).addTo(map);</pre>
+                      The latitude and longitude of Chicago were used to define the geographic location for placing the marker. Similar to adding tiles, <code>addTo(map)</code> adds the markers to the <code>map</code> variable which holds the initialized map. <br><br>
+                      Also note that we have assigned the marker to a variable called <code>marker1</code>. The variable will be used for binding popups later.
 
                       </li>
+                      <li>Follow this structure, we can add more markers to the map. For example, I would add another one for Tallahassee, FL.
+                        <pre>
+<span style="color:#a71d5d">var</span> marker2 = L.marker([<span style="color:blue">30.4670648,-84.3969412</span>]).addTo(map);</pre>
 
+                      We have assigned the marker to another variable called <code>marker2</code> so that it won't overrite the one for Chicago.<br><br>
+
+                      If you have followed along, your map should look like:</li>
+                      <iframe src="map/marker.html" width=100% height=520 frameborder=0></iframe><br><br>
 
                     </ul>
-                      <br><br>
 
-
-
+                    <h3><i class="fa fa-paint-brush"></i> Add popups</h3>
+                    <p>Popups are usually used when you want to attach some information to a particular object on a map. To make things simple, let's attach popups to the markers using the <code>bindPopup</code> method.</p>
+                    <ul>
+                      <li>Following the two lines for adding markers, add:
+                      <pre>
+marker1.bindPopup("<span style="color:red">NEIU in Chicago</span>");
+marker2.bindPopup("<span style="color:red">FSU in Tallahassee</span>");</pre>
+                    We attached the popups to each marker (<code>marker1</code> and <code>marker2</code>) with some more information in the quotes. Then the popup appears when you click on the marker.</li>
+                    </ul>
+<br><br>
 
     </div>
     <!-- /.container -->
@@ -114,11 +132,14 @@ var marker = L.marker([<span style="color:blue">41.870989,-87.6334147</span>]).a
       <h2><i class="fa fa-map"></i>Deliverables</h2>
       <p>Please turn in <b>a separate html file for each question</b> below via Dropbox on D2L. There will be <b>FOUR</b> in total. You don't have to turn in the leaflet files as I will have them on my computer.</p>
       <ul>
-        <li><b>Question 1:</b> Submit the html file you have just completed by following along the instructions (8 pts).</li>
-        <li><b>Question 2:</b> Save the html file as <code>q2.html</code>. Modify the code to change the <b>basemap</b> to anything you prefer. Be sure to use the <b>appropriate attribution</b> (<i>You will find the attribution for Stamen and Mapbox from <a href="https://neiugis.github.io/lab1/" target="_blank">Lab 1</a></i>) (5 pts). </li>
-        <li><b>Question 3:</b> Save the html file as <code>q3.html</code>. Modify the code</i> (6 pts). </li>
-        <li><b>Question 4:</b> Save the html file as <code>q4.html</code>. Modify the code</i> (6 pts). </li>
-      </ul>
+        <li><b>Question 1:</b> Submit the html file you have just completed by following along the instructions (7 pts).</li>
+        <li><b>Question 2:</b> Save the html file as <code>q2.html</code>. Modify the code to change the <b>basemap</b> to anything you prefer. Be sure to use the <b>appropriate attribution</b> (<i>You will find the attribution for Stamen and Mapbox from <a href="https://neiugis.github.io/lab1/" target="_blank">Lab 1</a></i>) (4 pts). </li>
+        <li><b>Question 3:</b> Save the html file as <code>q3.html</code>. Modify the code to show the <b>global level</b> map, then add a marker and popup information for <b>Beijing, China</b>. Those are the three cities I have lived in (7 pts). </li>
+        <li><b>Question 4:</b> Save the html file as <code>q4.html</code>. Make a map with AT LEAST THREE markers and popups for your selected topic, for example, places you have visited, your favorite restaurants, etc. (7 pts). </li>
+      </ul><br>
+
+      <h2><i class="fa fa-map"></i>Going Further (Optional)</h2>
+      <p>Wonder how to use custom markers from image files in Leaflet? Check out the Leaflet Tutorial <a href=" http://leafletjs.com/examples/custom-icons.html">Markers With Custom Icons</a>.</p><br><br>
     </section>
 
     <footer>

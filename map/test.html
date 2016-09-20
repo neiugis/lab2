@@ -11,14 +11,20 @@
         <div id="map" style="height: 500px"></div>
 
         <script type="text/javascript">
-          var map = L.map('map').setView([37.8, -96], 4);
+          var map = L.map('map',{
+            center:[37.8, -96],
+            zoom:4
+          });
 
           L.tileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
                attribution: '@ <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
-               maxZoom: 4,
-               minZoom: 4
+               maxZoom: 12
             }).addTo(map);
 
+          var marker1 = L.marker([41.870989,-87.6334147]).addTo(map);
+          var marker2 = L.marker([30.4670648,-84.3969412]).addTo(map);
+          marker1.bindPopup("This is Chicago!");
+          marker2.bindPopup("Tallahassee!!");
         </script>
    </body>
 </html>
