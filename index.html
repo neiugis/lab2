@@ -150,9 +150,9 @@
      
                 <p><a id="popup" title="Add Popups" class="toc-item"></a></p>
                   <h3><i class="fa fa-paint-brush"></i> Add Popups</h3>
-                    <p>Popups are often used when you want to attach some information to a particular object on a map. Here, let's attach popups to the markers using the <code>bindPopup</code> method of Leaflet.</p>
+                    <p>Popups are often used when you want to attach some information to a particular object on a map. Here, let's attach popups to the markers using the Leaflet <code>bindPopup</code> method.</p>
                     <ul>
-                      <li>Following the two lines of adding markers, add:
+                      <li>AFTER the two lines of adding markers, add:
                           <pre><code class="language-javascript">marker1.bindPopup("work at NEIU");
 marker2.bindPopup("went to FSU for graduate school");</code></pre>
 
@@ -162,28 +162,28 @@ marker2.bindPopup("went to FSU for graduate school");</code></pre>
                         <ul>
                             <li>Basically, the <code>bindPopup</code> method allows any complicated content to be inserted inside the <code>()</code> structured using HTML. And the HTML code needs to be <b>surrounded by quotes</b>.
                             </li>
-                            <li>If you have learnt some HTML, you would know that the <code>img</code> tag (<a href="https://www.w3schools.com/tags/tag_img.asp" target="_blank">learn the tag first</a>) is used to format an image in HTML. We use it to insert a picture to the popup here. <b>Replace</b> the two lines of bindPopup with the following:</li>
+                            <li>If you have learnt some HTML, you would know that the <code>img</code> tag (<a href="https://www.w3schools.com/tags/tag_img.asp" target="_blank">learn the tag first</a>) is used to format an image in HTML. We use it to insert a picture to the popup here. <b>REPLACE</b> the two lines of bindPopup with the following:</li>
                             <pre><code class="language-javascript">var pic1 = '&lt;img src=&quot;https://upload.wikimedia.org/wikipedia/commons/thumb/6/68/NEIU_Sci.jpg/1024px-NEIU_Sci.jpg&quot; alt=&quot;BBH&quot; width=&quot;250&quot;&gt;';
 var pic2 = '&lt;img src=&quot;https://upload.wikimedia.org/wikipedia/commons/3/36/FSUWestcottBuilding-2.jpg&quot; alt=&quot;FSU&quot; width=&quot;250&quot;&gt;';
 
 marker1.bindPopup(pic1);
 marker2.bindPopup(pic2);</code></pre>
-                            <li>In this example, I used variables <code>pic1</code> and <code>pic2</code> to hold the HTML formatted images. Use the scroll bar so that you can read the entire line. </li>
-                            <li>For the image source (the <code>src</code> attribute), I found pictures from Wikimedia Commons' public domain and used the image urls as the sources of the images. Alternatively, you may use <a href="https://imgur.com/" target="_blank">imgur</a> or other platforms to host your own images. Just make sure to <b>use the URL that links to the actual image file</b>, not a web page.</li>
+                            <li>Use the scroll bar so that you can read the entire line.  In this example, I used the variables <code>pic1</code> and <code>pic2</code> to hold the HTML formatted images.  </li>
+                            <li>For the image source (the <code>src</code> attribute), I found pictures from Wikimedia Commons' public domain and used the image urls as the sources. Alternatively, you may use <a href="https://imgur.com/" target="_blank">imgur</a> or other platforms to host your own images. Just make sure to <b>use the URL that links to the actual image file</b>, not a web page.</li>
                             <li>The <code>alt</code> attribute specifies an alternate text if the image failed to display for some reason.</li>
                             <li>In addition, I also defined the <code>width</code> of the image (in pixels). I didn't specify the height, which will be calculated proportionally by default.</li>
 
                             </ul>
                         </li>
                         <br>
-                        <li>Using HTML, you could also <b>combine different content</b> in your popups and format them in your desired manner. Try the example below:
+                        <li>Using HTML, you could also <b>combine different contents</b> in your popups and format them in your desired manner. Try the example below:
                         <pre><code class="language-javascript">var pic1 = '&lt;img src=&quot;https://upload.wikimedia.org/wikipedia/commons/thumb/6/68/NEIU_Sci.jpg/1024px-NEIU_Sci.jpg&quot; alt=&quot;BBH&quot; width=&quot;250&quot;&gt;';
 var pic2 = '&lt;img src=&quot;https://upload.wikimedia.org/wikipedia/commons/3/36/FSUWestcottBuilding-2.jpg&quot; alt=&quot;FSU&quot; width=&quot;250&quot;&gt;';
 
 marker1.bindPopup('work at NEIU' + '&lt;br&gt;' + pic1);
 marker2.bindPopup('went to FSU for graduate school' + '&lt;br&gt;' + pic2);</code></pre>
                             
-                        The <code>+</code> sign could be used to combine content. Note the <code>br</code> tag is used to insert a link break between the text and the image.
+                        The <code>+</code> sign is used to combine contents. Note the <code>br</code> tag is used to insert a link break between the text and the image.
                         </li>
                         
                         <li>The example below <b>changes colors and font weight</b> of the text using the <code>style</code> attribute inside a <code>p</code> tag:
@@ -192,7 +192,7 @@ var pic2 = '&lt;img src=&quot;https://upload.wikimedia.org/wikipedia/commons/3/3
 
 marker1.bindPopup('&lt;p style=&quot;color:blue; font-weight:bold&quot;&gt; work at NEIU &lt;/p&gt;' + pic1);
 marker2.bindPopup('&lt;p style=&quot;color:seagreen; font-weight:bold&quot;&gt; went to FSU for graduate school&lt;/p&gt;' + pic2);</code></pre>
-                        <p>By the way, I like <a href="https://htmlcolorcodes.com/" target="_blank">this website</a> for picking HTML colors</p></li>
+                        <p>By the way, I like <a href="https://htmlcolorcodes.com/" target="_blank">this website</a> for picking HTML colors.</p></li>
                         
                         <li>Practice your HTML knowledge and try more on your own to customize the popups!</li>
                     </ul>
