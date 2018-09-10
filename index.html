@@ -203,11 +203,12 @@ marker2.bindPopup('&lt;p style=&quot;color:seagreen; font-weight:bold&quot;&gt; 
                     <h3><i class="fa fa-paint-brush"></i> Customize Marker Icons</h3>
                     <p>In Leaflet, the blue locator icon is used by default for displaying the markers. However, it is also possible to use your own custom icons. </p>
                     <ul>
-                        <li><b>Prepare the image</b> to be used as the custom icon. Ideally, the icon images should have a transparent background. Image file formats that support transparency include <b>GIF</b>, <b>PNG</b>, <b>BMP</b>, <b>TIFF</b>, and <b>JPEG 2000</b> (NOT JPEG).</li>
+                        <li><b>Prepare the image</b> to be used as the custom icon. Ideally, the icon images should have a transparent background. Image file formats that support transparency include <b>GIF</b>, <b>PNG</b>, <b>BMP</b>, <b>TIFF</b>, and <b>JPEG 2000</b> (NOT JPEG!!!).</li>
                         <li>As an example, I am using an image icon <code>university.png</code> downloaded from <a href="https://www.flaticon.com/" target="_blank">https://www.flaticon.com/</a><br>
                         <img src="university.png" alt="icons" style="background-color: rgba(255,255,255,0)">
+                            <br>To test things out first, you may right-click the sample image to save it. 
                         </li>
-                        <li>Make sure to <b>save this image file in the SAME folder</b> as the html file.</li>
+                        <li>Make sure to <b>save the icon image file in the SAME folder</b> as the html file.</li>
                         <li>Marker icons in Leaflet are defined by <code>L.Icon</code> objects.<br> Place the following lines <b>right BEFORE </b>adding the markers ( i.e., before the <code>L.marker</code> functions; Defining the icons before adding the markers allows us to use these custom icons when adding the markers):
                         <pre><code class="language-javascript">var universityIcon = L.icon({
     iconUrl: 'university.png', // url that links to the icon image file
@@ -215,9 +216,9 @@ marker2.bindPopup('&lt;p style=&quot;color:seagreen; font-weight:bold&quot;&gt; 
     iconAnchor:   [19, 19], // the top left corner of the icon will be aligned so that this point is at the marker's geographical location
     popupAnchor:  [0, -10] // point from which the popup should open, relative to the iconAnchor
 });</code></pre>
-                            <p>The explanation of each line is provided as <b>JavaScript comments</b>, starting with <code>//</code>. And you may want to read these comments carefully and let me know if you have any questions.</p>
+                            <p>The explanation of each line is provided as <b>JavaScript comments</b>, starting with <code>//</code>, which won't be executed. And you may want to read these comments carefully and let me know if you have any questions.</p>
                         <ul><li>
-                            The most important element when defining a custom icon is the image file (<code>iconUrl</code>). In this case, we saved the image file in the same folder as the html file so we could link to it by the file name (<b>relative url</b>). Alternatively, you could use <b>absolute url</b> of a hosted image file (We will discuss the idea of relative/absolute url in class).
+                            The most important element when defining a custom icon is the image file (<code>iconUrl</code>). In this case, we saved the image file in the same folder as the html file so we could link to it by the file name (<b>relative url</b>). Alternatively, you could use <b>absolute url</b> of a hosted image file (We will discuss the idea of relative/absolute url in the next few weeks).
                             </li>
                             <li>It is often times necessary to adjust the size (<code>iconSize</code>) and alignment (<code>iconAnchor</code>) of the icon, as well as the alignment of the popup (<code>popupAnchor</code>). If you are intended to use the default options (click <a href="https://leafletjs.com/reference-1.3.4.html#icon-iconsize" target="_blank">here</a> to find out their default settings), you may omit these lines in your code.</li>
                             </ul>
