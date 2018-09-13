@@ -208,7 +208,7 @@ marker2.bindPopup('&lt;p style=&quot;color:seagreen; font-weight:bold&quot;&gt; 
                             <br>To test things out first, you may right-click the sample image to save it. 
                         </li>
                         <li>Make sure to <b>save the icon image file in the SAME folder</b> as the html file.</li>
-                        <li>Marker icons in Leaflet are defined by <code>L.Icon</code> objects.<br> Place the following lines <b>right BEFORE </b>adding the markers ( i.e., before the <code>L.marker</code> functions; Defining the icons before adding the markers allows us to use these custom icons when adding the markers):
+                        <li>Marker icons in Leaflet are defined by <code>L.icon</code> objects.<br> Place the following lines <b>right BEFORE </b>adding the markers ( i.e., before the <code>L.marker</code> functions; Defining the icons before adding the markers allows us to use these custom icons when adding the markers):
                         <pre><code class="language-javascript">var universityIcon = L.icon({
     iconUrl: 'university.png', // url that links to the icon image file
     iconSize:     [38, 38], // size of the icon image in pixels
