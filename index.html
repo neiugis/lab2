@@ -208,7 +208,7 @@ marker2.bindPopup('&lt;p style=&quot;color:seagreen; font-weight:bold&quot;&gt; 
                             <br>To test things out first, you may right-click the sample image to save it. 
                         </li>
                         <li>Make sure to <b>save the icon image file in the SAME folder</b> as the html file.</li>
-                        <li>Marker icons in Leaflet are defined by <code>L.icon</code> objects.<br> Place the following lines <b>right BEFORE </b>adding the markers ( i.e., before the <code>L.marker</code> functions; Defining the icons before adding the markers allows us to use these custom icons when adding the markers):
+                        <li>Marker icons in Leaflet are defined by <code>L.icon</code> objects.<br> Place the following lines <b>right BEFORE </b>adding the markers ( i.e., above the <code>L.marker</code> functions; Defining the icons before adding the markers allows us to use these custom icons when adding the markers):
                         <pre><code class="language-javascript">var universityIcon = L.icon({
     iconUrl: 'university.png', // url that links to the icon image file
     iconSize:     [38, 38], // size of the icon image in pixels
@@ -219,7 +219,7 @@ marker2.bindPopup('&lt;p style=&quot;color:seagreen; font-weight:bold&quot;&gt; 
                         <ul><li>
                             The most important element when defining a custom icon is the image file (<code>iconUrl</code>). In this case, we saved the image file in the same folder as the html file so we could link to it by the file name (<b>relative url</b>). Alternatively, you could use <b>absolute url</b> of a hosted image file (Refer to the <a href="https://www.w3schools.com/html/html_filepaths.asp" target="_blank">HTML File Paths</a> tutorial).
                             </li>
-                            <li>It is often times necessary to adjust the size (<code>iconSize</code>) and alignment (<code>iconAnchor</code>) of the icon, as well as the alignment of the popup (<code>popupAnchor</code>). If you are intended to use the default options (click <a href="https://leafletjs.com/reference-1.3.4.html#icon-iconsize" target="_blank">here</a> to find out their default settings), you may omit these lines in your code.</li>
+                            <li>It is often times necessary to adjust the size (<code>iconSize</code>) and alignment (<code>iconAnchor</code>) of the icon, as well as the alignment of the popup (<code>popupAnchor</code>). </li>
                             </ul>
                         </li><br>
                         
