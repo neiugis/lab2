@@ -10,8 +10,6 @@
       <meta name="viewport" content="width=device-width,initial-scale=1">
         
       <link rel="icon" href="location.png" >
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-
 
       <link rel="stylesheet" href="gridism.css">
       <link rel="stylesheet" href="markdown.css">
@@ -36,84 +34,6 @@
           var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
         })();
       </script>
-        
-        
-        <style>
-            .code-container {
-            position: relative; /* Allows the button to be positioned inside the container */
-            background-color: #f7f7f8;
-            border: 1px solid #d1d5db;
-            border-radius: 6px;
-            padding: 10px;
-            margin-bottom: 20px;
-            font-family: 'Courier New', Courier, monospace;
-            overflow: auto; /* Ensures scroll if content exceeds width */
-        }
-
-        /* Style for the pre and code block */
-        .code-container pre {
-            margin: 0;
-            background: none;
-            border: 1px solid #f7f7f8;
-            padding: 0px 0 0 0; /* Add padding to the top for the button */
-            white-space: pre-wrap;  /* Enable line wrapping */
-            word-wrap: break-word;  /* Allow breaking long words */
-            overflow-wrap: break-word; /* Break long words in modern browsers */
-            font-size: 14px;
-            overflow-x: auto; /* Allow horizontal scroll if needed */
-        }
-
-        /* Style for the copy button */
-        .copy-btn {
-            position: absolute;
-            top: 10px;
-            right: 10px;
-            background-color: #566573;
-            color: #fdfefe;
-            border: none;
-            padding: 4px 8px;
-            font-size: 12px;
-            cursor: pointer;
-            border-radius: 5px;
-            transition: background-color 0.3s ease;
-        }
-
-        /* Tooltip styling */
-        .copy-btn[data-tooltip]::after {
-            content: attr(data-tooltip); /* Display the tooltip text */
-            position: absolute;
-            bottom: 125%; /* Position above the button */
-            left: 50%;
-            transform: translateX(-50%);
-            background-color: #333; /* Dark background for the tooltip */
-            color: #fff; /* White text color */
-            padding: 5px 8px;
-            border-radius: 5px;
-            font-size: 12px;
-            white-space: nowrap;
-            opacity: 0; /* Initially hidden */
-            visibility: hidden;
-            transition: opacity 0.3s ease, visibility 0.3s ease;
-            z-index: 100; /* Ensure it appears above other elements */
-        }
-
-        /* Show the tooltip on hover */
-        .copy-btn:hover::after {
-            opacity: 1;
-            visibility: visible;
-        }
-
-        /* Icon inside the button */
-        .copy-btn i {
-            margin-right: 5px; /* Space between the icon and text */
-        }
-
-        /* Change background color when hovering over the button */
-        .copy-btn:hover {
-            background-color: #566573;
-        }
-        
-        </style>
 
     </head>
     
@@ -148,12 +68,7 @@
                        
                        <li>Open your <b>code editor</b> and add the following lines to set up the basemap using the standard map tiles from OpenStreetMap.
                                <p>Please spend some time to go over these lines and make sure you understand what each line does. Note that we covered all these in Lab 1. </p>
-                           
-                           <div class="code-container">
-                               
-                            <button class="copy-btn" title="Click to copy" onclick="copyToClipboard(this)"><i class="fa-regular fa-copy"></i> <b>Copy Code</b></button>
-                               
-                               <pre><code class="language-js">&lt;!DOCTYPE html&gt;
+                               <pre><code class="language-html">&lt;!DOCTYPE html&gt;
 &lt;html&gt;
     &lt;head&gt;
         &lt;title&gt;Lab 2&lt;/title&gt;
@@ -187,9 +102,7 @@
         &lt;/script&gt;
    &lt;/body&gt;
 &lt;/html&gt;
-</code></pre>
-                           </div>
-                               </li>
+</code></pre></li>
            <li>Then, save the document as <code>map2.html</code> in your lab 2 folder. Please remember to specify the file extension as <b>.html</b> to make it work. Your map should look like:<br></li> 
             
             <iframe src="map/base.html" width=100% height=520 frameborder=0></iframe><br>
@@ -208,13 +121,7 @@
                     <ul>
                       <li>Let's first add a marker for Chicago. The <code>L.marker</code> function of Leaflet is used to put markers on the map. 
                           <br>Place the following line to the <code>script</code> section, AFTER the adding tile layer part:
-                          <div class="code-container">
-                               
-                            <button class="copy-btn" title="Click to copy" onclick="copyToClipboard(this)"><i class="fa-regular fa-copy"></i> <b>Copy Code</b></button>
-                               
-                               <pre><code class="language-js">
-var marker1 = L.marker([41.98,-87.72]).addTo(map);</code></pre>
-                          </div>
+                          <pre><code class="language-javascript">var marker1 = L.marker([41.98,-87.72]).addTo(map);</code></pre>
                         
                       The latitude and longitude of Chicago were used to define the geographic location for placing the marker. Similar to adding tiles, <code>addTo(map)</code> adds the markers to the <code>map</code> variable which holds the initialized map. <br><br>
                     <div style="text-align: left;">
@@ -230,12 +137,7 @@ var marker1 = L.marker([41.98,-87.72]).addTo(map);</code></pre>
                       </li>
                         <br>
                       <li>Follow this structure, we can add more markers to the map. For example, the following line adds another marker for Tallahassee, FL.
-                          <div class="code-container">
-                               
-                            <button class="copy-btn" title="Click to copy" onclick="copyToClipboard(this)"><i class="fa-regular fa-copy"></i> <b>Copy Code</b></button>
-                               
-                               <pre><code class="language-js">
-var marker2 = L.marker([30.44,-84.3]).addTo(map);</code></pre></div>
+                          <pre><code class="language-javascript">var marker2 = L.marker([30.44,-84.3]).addTo(map);</code></pre>
                         
                       We have assigned the marker to another variable called <code>marker2</code> so that it won't overwrite the existing marker for Chicago.<br><br>
 
@@ -250,13 +152,8 @@ var marker2 = L.marker([30.44,-84.3]).addTo(map);</code></pre></div>
                     <p>Popups are often used when you want to attach some information to a particular object on a map. Here, let's attach popups to the markers using the Leaflet <code>bindPopup</code> method.</p>
                     <ul>
                       <li>Following the two lines of adding markers, add:
-                          <div class="code-container">
-                               
-                            <button class="copy-btn" title="Click to copy" onclick="copyToClipboard(this)"><i class="fa-regular fa-copy"></i> <b>Copy Code</b></button>
-                               
-                               <pre><code class="language-js">
-marker1.bindPopup("work at NEIU");
-marker2.bindPopup("went to FSU for graduate school");</code></pre></div>
+                          <pre><code class="language-javascript">marker1.bindPopup("work at NEIU");
+marker2.bindPopup("went to FSU for graduate school");</code></pre>
 
                     <p>We attached the popups to each marker (<code>marker1</code> and <code>marker2</code>) with the text in the quotes. Single and double quotes work the same here.</p> </li>
                         <li>Click on each marker, their popups should appear.</li><br>
@@ -265,16 +162,11 @@ marker2.bindPopup("went to FSU for graduate school");</code></pre></div>
                             <li>Basically, the <code>bindPopup</code> method allows any complicated content to be inserted inside the <code>()</code> structured using HTML. And the HTML code needs to be <b>surrounded by quotes</b>.
                             </li>
                             <li>If you have learnt some HTML, you would know that the <code>img</code> tag (<a href="https://www.w3schools.com/tags/tag_img.asp" target="_blank">learn the tag first</a>) is used to format an image in HTML. We use it to insert a picture to the popup here. <b>REPLACE</b> the two lines of bindPopup with the following:</li>
-                            <div class="code-container">
-                               
-                            <button class="copy-btn" title="Click to copy" onclick="copyToClipboard(this)"><i class="fa-regular fa-copy"></i> <b>Copy Code</b></button>
-                               
-                               <pre><code class="language-js">
-var pic1 = '&lt;img src=&quot;https://upload.wikimedia.org/wikipedia/commons/thumb/6/68/NEIU_Sci.jpg/1024px-NEIU_Sci.jpg&quot; alt=&quot;BBH&quot; width=&quot;250&quot;&gt;';
+                            <pre><code class="language-javascript">var pic1 = '&lt;img src=&quot;https://upload.wikimedia.org/wikipedia/commons/thumb/6/68/NEIU_Sci.jpg/1024px-NEIU_Sci.jpg&quot; alt=&quot;BBH&quot; width=&quot;250&quot;&gt;';
 var pic2 = '&lt;img src=&quot;https://upload.wikimedia.org/wikipedia/commons/3/36/FSUWestcottBuilding-2.jpg&quot; alt=&quot;FSU&quot; width=&quot;250&quot;&gt;';
 
 marker1.bindPopup(pic1);
-marker2.bindPopup(pic2);</code></pre></div>
+marker2.bindPopup(pic2);</code></pre>
                             <li>Use the scroll bar so that you can read the entire line.  In this example, I used the variables <code>pic1</code> and <code>pic2</code> to hold the HTML formatted images.  </li>
                             <li>For the image source (the <code>src</code> attribute), I found pictures from Wikimedia Commons' public domain and used the image urls as the sources. Alternatively, you may use <a href="https://imgur.com/" target="_blank">imgur</a> or other platforms to host your own images. Just make sure to <b>use the URL that links to the actual image file</b>, not a web page.</li>
                             <li>The <code>alt</code> attribute specifies an alternate text if the image failed to display for some reason.</li>
@@ -284,31 +176,21 @@ marker2.bindPopup(pic2);</code></pre></div>
                         </li>
                         <br>
                         <li>Using HTML, you could also <b>combine different contents</b> in your popups and format them in your desired manner. Try the example below:
-                        <div class="code-container">
-                               
-                            <button class="copy-btn" title="Click to copy" onclick="copyToClipboard(this)"><i class="fa-regular fa-copy"></i> <b>Copy Code</b></button>
-                               
-                               <pre><code class="language-js">
-var pic1 = '&lt;img src=&quot;https://upload.wikimedia.org/wikipedia/commons/thumb/6/68/NEIU_Sci.jpg/1024px-NEIU_Sci.jpg&quot; alt=&quot;BBH&quot; width=&quot;250&quot;&gt;';
+                        <pre><code class="language-javascript">var pic1 = '&lt;img src=&quot;https://upload.wikimedia.org/wikipedia/commons/thumb/6/68/NEIU_Sci.jpg/1024px-NEIU_Sci.jpg&quot; alt=&quot;BBH&quot; width=&quot;250&quot;&gt;';
 var pic2 = '&lt;img src=&quot;https://upload.wikimedia.org/wikipedia/commons/3/36/FSUWestcottBuilding-2.jpg&quot; alt=&quot;FSU&quot; width=&quot;250&quot;&gt;';
 
 marker1.bindPopup('work at NEIU' + '&lt;br&gt;' + pic1);
-marker2.bindPopup('went to FSU for graduate school' + '&lt;br&gt;' + pic2);</code></pre></div>
+marker2.bindPopup('went to FSU for graduate school' + '&lt;br&gt;' + pic2);</code></pre>
                             
                         The <code>+</code> sign is used to combine contents. Note the <code>br</code> tag is used to insert a link break between the text and the image.
                         </li>
                         
                         <li>The example below <b>changes colors and font weight</b> of the text using the <code>style</code> attribute inside a <code>p</code> tag:
-                        <div class="code-container">
-                               
-                            <button class="copy-btn" title="Click to copy" onclick="copyToClipboard(this)"><i class="fa-regular fa-copy"></i> <b>Copy Code</b></button>
-                               
-                               <pre><code class="language-js">
-var pic1 = '&lt;img src=&quot;https://upload.wikimedia.org/wikipedia/commons/thumb/6/68/NEIU_Sci.jpg/1024px-NEIU_Sci.jpg&quot; alt=&quot;BBH&quot; width=&quot;250&quot;&gt;';
+                        <pre><code class="language-javascript">var pic1 = '&lt;img src=&quot;https://upload.wikimedia.org/wikipedia/commons/thumb/6/68/NEIU_Sci.jpg/1024px-NEIU_Sci.jpg&quot; alt=&quot;BBH&quot; width=&quot;250&quot;&gt;';
 var pic2 = '&lt;img src=&quot;https://upload.wikimedia.org/wikipedia/commons/3/36/FSUWestcottBuilding-2.jpg&quot; alt=&quot;FSU&quot; width=&quot;250&quot;&gt;';
 
 marker1.bindPopup('&lt;p style=&quot;color:blue; font-weight:bold&quot;&gt; work at NEIU &lt;/p&gt;' + pic1);
-marker2.bindPopup('&lt;p style=&quot;color:seagreen; font-weight:bold&quot;&gt; went to FSU for graduate school&lt;/p&gt;' + pic2);</code></pre></div>
+marker2.bindPopup('&lt;p style=&quot;color:seagreen; font-weight:bold&quot;&gt; went to FSU for graduate school&lt;/p&gt;' + pic2);</code></pre>
                         <p>By the way, I like <a href="https://htmlcolorcodes.com/" target="_blank">this website</a> for picking <b>HTML colors</b>.</p></li>
                         
                         <li>Practice your HTML knowledge and try more on your own to customize the popups!</li>
@@ -327,17 +209,12 @@ marker2.bindPopup('&lt;p style=&quot;color:seagreen; font-weight:bold&quot;&gt; 
                         </li>
                         <li>Make sure to <b>save the icon image file in the SAME folder</b> as the html file.</li>
                         <li>Marker icons in Leaflet are defined by <code>L.icon</code> objects.<br> Place the following lines <b>right BEFORE </b>adding the markers ( i.e., above the <code>L.marker</code> functions; Defining the icons before adding the markers allows us to use these custom icons when adding the markers):
-                            <div class="code-container">
-                               
-                            <button class="copy-btn" title="Click to copy" onclick="copyToClipboard(this)"><i class="fa-regular fa-copy"></i> <b>Copy Code</b></button>
-                               
-                               <pre><code class="language-js">
-var universityIcon = L.icon({
+                        <pre><code class="language-javascript">var universityIcon = L.icon({
     iconUrl: 'university.png', // url that links to the icon image file
     iconSize:     [38, 38], // size of the icon image in pixels
     iconAnchor:   [19, 19], // the top left corner of the icon will be aligned so that this point is at the marker's geographical location
     popupAnchor:  [0, -10] // point from which the popup should open, relative to the iconAnchor
-});</code></pre></div>
+});</code></pre>
                             <p>The explanation of each line is provided as <b>JavaScript comments</b>, starting with <code>//</code>, which won't be executed. And you may want to read these comments carefully and let me know if you have any questions.</p>
                         <ul><li>
                             The most important element when defining a custom icon is the image file (<code>iconUrl</code>). In this case, we saved the image file in the same folder as the html file so we could link to it by the file name (<b>relative url</b>). Alternatively, you could use <b>absolute url</b> of a hosted image file (Refer to the <a href="https://www.w3schools.com/html/html_filepaths.asp" target="_blank">HTML File Paths</a> tutorial).
@@ -347,13 +224,8 @@ var universityIcon = L.icon({
                         </li><br>
                         
                         <li>Note that we have defined a variable <code><span style="color:black">universityIcon</span></code> to hold the custom icon so that we could use it when adding the markers. <br><b>Modify</b> the lines for adding the markers as (Note the <span style="color:red">red</span> part is added to the orignal lines):
-                            <div class="code-container">
-                               
-                            <button class="copy-btn" title="Click to copy" onclick="copyToClipboard(this)"><i class="fa-regular fa-copy"></i> <b>Copy Code</b></button>
-                               
-                               <pre><code class="language-js">
-var marker1 = L.marker([41.98,-87.72], {icon: universityIcon}).addTo(map);
-var marker2 = L.marker([30.44,-84.3], {icon: universityIcon}).addTo(map);</code></pre> </div>
+                            <pre><code class="language-r">var marker1 </code>= L.marker([41.98,-87.72]<code>, {icon: universityIcon})</code>.addTo(map);
+var marker2 = L.marker([30.44,-84.3]<code >, {icon: universityIcon})</code>.addTo(map);</pre> 
                         <p>Basically, we added <code>{icon: universityIcon}</code> to draw the markers using our custom icon: the <code><span style="color:black">universityIcon</span></code> variable. A comma <code>,</code> was used as a separator within a statement.</p></li>
                         <li>Here is how the final map should look like (<a href="https://raw.githubusercontent.com/neiugis/lab2/gh-pages/map/final.html" target="_blank">sample code</a>):
                             <iframe src="map/final.html" width=100% height=520 frameborder=0></iframe><br>
@@ -385,31 +257,6 @@ var marker2 = L.marker([30.44,-84.3], {icon: universityIcon}).addTo(map);</code>
           </footer>
 
             <script src="prism.js"></script>
-        
-        <script>
-            function copyToClipboard(button) {
-                // Find the code block within the same container as the button
-                const codeContainer = button.closest('.code-container');
-                const codeText = codeContainer.querySelector('pre code').innerText;
-
-                // Copy the code text to the clipboard
-                navigator.clipboard.writeText(codeText).then(() => {
-                    // Change the button text to "Copied!" on success
-                    button.innerHTML = ' <i class="fa-solid fa-check"></i> <strong>Copied!</strong>';
-                    button.style.backgroundColor = '#6cbf43'; // Green background for success
-
-                    // Reset the button text and background color after 2 seconds
-                    setTimeout(() => {
-                        button.innerHTML = '<i class="fa-regular fa-copy"></i> <strong>Copy code</strong>';
-                        button.style.backgroundColor = '#566573'; // Reset to original color
-                    }, 2000);
-                }).catch(err => {
-                    console.error('Failed to copy:', err);
-                });
-            }
-            </script>
-
-
 
      </body>
 </html>
