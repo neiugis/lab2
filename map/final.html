@@ -23,27 +23,30 @@
               zoom: 4
           });
 
-          L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-               attribution: '@ <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+          L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/Canvas/World_Light_Gray_Base/MapServer/tile/{z}/{y}/{x}', {
+               attribution: 'Tiles &copy; <a href="https://www.esri.com/">Esri</a>',
                maxZoom: 4,
                minZoom: 4
             }).addTo(map);
+            
+            
+            var universityIcon = L.icon({
+                iconUrl: 'university.png', // url that links to the icon image file, saved in the same folder as the current page 
+                iconSize:     [38, 38], // size of the icon image in pixels
+                iconAnchor:   [19, 19], // the top left corner of the icon will be aligned so that this point is at the marker's geographical location
+                popupAnchor:  [0, -10] // point from which the popup should open, relative to the iconAnchor
+            });
+            
 
-          var universityIcon = L.icon({
-              iconUrl: 'university.png', // url that links to the icon image file
-              iconSize:     [38, 38], // size of the icon image in pixels
-              iconAnchor:   [19, 19], // the top left corner of the icon will be aligned so that this point is at the marker's geographical location
-              popupAnchor:  [0, -10] // point from which the popup should open, relative to the iconAnchor
-          });
+            var marker1 = L.marker([41.98,-87.72], {icon: universityIcon, alt: 'Northeastern Illinois University'}).addTo(map);
+            var marker2 = L.marker([30.44,-84.3], {icon: universityIcon, alt: 'Florida State University'}).addTo(map);
 
-          var marker1 = L.marker([41.98,-87.72], {icon: universityIcon}).addTo(map);
-          var marker2 = L.marker([30.44,-84.3], {icon: universityIcon}).addTo(map);
 
-          var pic1 = '<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/68/NEIU_Sci.jpg/1024px-NEIU_Sci.jpg" alt="BBH" width="250">';
-          var pic2 = '<img src="https://upload.wikimedia.org/wikipedia/commons/3/36/FSUWestcottBuilding-2.jpg" alt="FSU" width="250">';
+            var pic1 = '<img src="https://upload.wikimedia.org/wikipedia/commons/6/68/NEIU_Sci.jpg" alt="BBH" width="250">';
+            var pic2 = '<img src="https://upload.wikimedia.org/wikipedia/commons/3/36/FSUWestcottBuilding-2.jpg" alt="FSU" width="250">';
 
-          marker1.bindPopup('<p style="color:blue; font-weight:bold"> work at NEIU </p>' + pic1);
-          marker2.bindPopup('<p style="color:seagreen; font-weight:bold"> went to FSU for graduate school</p>' + pic2);
+            marker1.bindPopup('<p style="color:blue; font-weight:bold"> work at NEIU </p>' + pic1);
+            marker2.bindPopup('<p style="color:seagreen; font-weight:bold"> went to FSU for graduate school</p>' + pic2);
 
         </script>
    </body>
