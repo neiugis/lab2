@@ -22,20 +22,10 @@
       <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
       <link href="prism.css" rel="stylesheet" />
 
-      <script type="text/javascript" async="" src="ga.js"></script><script src="jquery.js" type="text/javascript"></script>
+      <script src="jquery.js" type="text/javascript"></script>
       <script src="snap.svg-min.js" type="text/javascript"></script>
       <script src="application.js" type="text/javascript"></script>
 
-      <script type="text/javascript">
-        var _gaq = _gaq || [];
-        _gaq.push(['_setAccount', 'UA-3769691-29']);
-        _gaq.push(['_trackPageview']);
-        (function() {
-          var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-          ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-          var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-        })();
-      </script>
         
         
         <style>
@@ -123,7 +113,7 @@
             <div class="article-heading js-article-heading js-geopattern" style="background-color:#11594A">
                 <div class="wrap">
                   <h1>Lab 2. Markers &amp; Popups   <i class="fa fa-leaf"></i></h1>
-                  <p style="color:#FFC300"><b><i class="fa fa-spinner fa-spin"></i>  Due: 11:59 pm, Wednesday, 9/25</b></p>
+                  <p style="color:#FFC300"><b><i class="fa fa-spinner fa-spin"></i>  Due: 11:59 pm, Wednesday, 9/23</b></p>
                 </div>
             </div>
 
@@ -144,7 +134,7 @@
                   <h3><i class="fa fa-paint-brush"></i> Set Up Basemap</h3>
                    <p>We will first set up the basemap based on what we covered in Lab 1.</p>
                    <ul>
-                       <li>To stay organized, it is recommended to create a <strong>new file folder</strong> to save your lab 2 html file and the icon image to be added later. </li>    
+                       <li>To stay organized, it is recommended to create a <strong>new file folder</strong> to save your Lab 2 HTML file and the icon image to be added later. </li>    
                        
                        <li>Open your <b>code editor</b>, copy and paste the following lines to set up the basemap using the standard map tiles from OpenStreetMap.
                                <p>Please spend some time to go over these lines and make sure you understand what each line does. Note that we covered all these in Lab 1. </p>
@@ -179,7 +169,7 @@
           });
 
           L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-               attribution: '@ &lt;a href=&quot;https://www.openstreetmap.org/copyright&quot;&gt;OpenStreetMap&lt;/a&gt; contributors',
+               attribution: '&amp;copy; &lt;a href=&quot;https://www.openstreetmap.org/copyright&quot;&gt;OpenStreetMap&lt;/a&gt; contributors',
                maxZoom: 4,
                minZoom: 4
             }).addTo(map);
@@ -190,7 +180,7 @@
 </code></pre>
                            </div>
                                </li>
-           <li>Then, save the document as <code>map2.html</code> in your lab 2 folder. Please remember to specify the file extension as <b>.html</b> to make it work. Your map should look like:<br></li> 
+           <li>Then, save the document as <code>map2.html</code> in your Lab 2 folder. Please remember to specify the file extension as <b>.html</b> to make it work. Your map should look like:<br></li> 
             
             <iframe src="map/base.html" width=100% height=520 frameborder=0></iframe><br>
         
@@ -206,7 +196,7 @@
                   <h3><i class="fa fa-paint-brush"></i> Add Markers</h3>
                     <p>Now, we already have the basemap set up and we could add some other things to the map. </p>
                     <ul>
-                      <li>Let's first add a marker for Chicago. The <code>L.marker</code> function of Leaflet is used to put markers on the map. 
+                      <li>Let us first add a marker for Chicago. The <code>L.marker</code> function of Leaflet is used to put markers on the map. 
                           <br>Place the following line to the <code>script</code> section, AFTER the adding tile layer part:
                           <div class="code-container">
                                
@@ -219,7 +209,7 @@ var marker1 = L.marker([41.98,-87.72]).addTo(map);</code></pre>
                       The latitude and longitude of Chicago were used to define the geographic location for placing the marker. Similar to adding tiles, <code>addTo(map)</code> adds the markers to the <code>map</code> variable which holds the initialized map. <br><br>
                     <div style="text-align: left;">
                       <div style="display:inline-block; vertical-align:top"><i class="fa fa-hand-o-right fa-lg faa-horizontal animated" aria-hidden="true" style="display:inline-block"></i></div>&nbsp;&nbsp;
-                      <div style="color:#5B2C6F; font-weight:bold; font-size:14pt;display:inline-block;width:93%"> The <i>semicolon</i> <code>;</code> in JavaScript is used to separate statements.  A statement is a piece of code that tells the computer to do something. However, ending statements with semicolon is not required, but highly recommended.</div>
+                      <div style="color:#5B2C6F; font-weight:bold; font-size:14pt;display:inline-block;width:93%"> The <i>semicolon</i> <code>;</code> in JavaScript is used to separate statements.  A statement is a piece of code that tells the computer to do something. However, ending statements with a semicolon is not required, but highly recommended.</div>
                     </div>
                       <br>
                       Also note that we have assigned the marker to a variable called <code>marker1</code>. We have been using variable since Lab 1. <a href="https://www.w3schools.com/js/js_variables.asp" target="_blank">JavaScript variables</a> are <i>containers for storing data values</i> to be used at a later time. 
@@ -229,7 +219,7 @@ var marker1 = L.marker([41.98,-87.72]).addTo(map);</code></pre>
                           </ul> 
                       </li>
                         <br>
-                      <li>Follow this structure, we can add more markers to the map. For example, the following line adds another marker for Tallahassee, FL.
+                      <li>Following this structure, we can add more markers to the map. For example, the following line adds another marker for Tallahassee, FL.
                           <div class="code-container">
                                
                             <button class="copy-btn" title="Click to copy" onclick="copyToClipboard(this)"><i class="fa-regular fa-copy"></i> <b>Copy Code</b></button>
@@ -237,7 +227,7 @@ var marker1 = L.marker([41.98,-87.72]).addTo(map);</code></pre>
                                <pre><code class="language-js">
 var marker2 = L.marker([30.44,-84.3]).addTo(map);</code></pre></div>
                         
-                      We have assigned the marker to another variable called <code>marker2</code> so that it won't overwrite the existing marker for Chicago.<br><br>
+                      We have assigned the marker to another variable called <code>marker2</code> so that it will not overwrite the existing marker for Chicago.<br><br>
 
                       If you have followed along, your map should look like (<a href="https://raw.githubusercontent.com/neiugis/lab2/gh-pages/map/marker.html" target="_blank">sample code</a>):</li>
                       <iframe src="map/marker.html" width=100% height=520 frameborder=0></iframe><br>
@@ -262,9 +252,9 @@ marker2.bindPopup("went to FSU for graduate school");</code></pre></div>
                         <li>Click on each marker, their popups should appear.</li><br>
                         <li>What about inserting <b>pictures </b>in the popup?
                         <ul>
-                            <li>Basically, the <code>bindPopup</code> method allows any complicated content to be inserted inside the <code>()</code> structured using HTML. And the HTML code needs to be <b>surrounded by quotes</b>.
+                            <li>Basically, the <code>bindPopup</code> method allows any content structured using HTML to be inserted inside the parentheses <code>()</code>. The HTML code needs to be <b>surrounded by quotes</b>.
                             </li>
-                            <li>If you have learnt some HTML, you would know that the <code>img</code> tag (<a href="https://www.w3schools.com/tags/tag_img.asp" target="_blank">learn the tag first</a>) is used to format an image in HTML. We use it to insert a picture to the popup here. <b>REPLACE</b> the two lines of bindPopup with the following:</li>
+                            <li>If you have learned some HTML, you would know that the <code>img</code> tag (<a href="https://www.w3schools.com/tags/tag_img.asp" target="_blank">learn the tag first</a>) is used to format an image in HTML. We use it to insert a picture to the popup here. <b>REPLACE</b> the two lines of bindPopup with the following:</li>
                             <div class="code-container">
                                
                             <button class="copy-btn" title="Click to copy" onclick="copyToClipboard(this)"><i class="fa-regular fa-copy"></i> <b>Copy Code</b></button>
@@ -275,10 +265,10 @@ var pic2 = '&lt;img src=&quot;https://upload.wikimedia.org/wikipedia/commons/3/3
 
 marker1.bindPopup(pic1);
 marker2.bindPopup(pic2);</code></pre></div>
-                            <li>Use the scroll bar so that you can read the entire line.  In this example, I used the variables <code>pic1</code> and <code>pic2</code> to hold the HTML formatted images.  </li>
-                            <li>For the image source (the <code>src</code> attribute), I found pictures from Wikimedia Commons' public domain and used the image urls as the sources. You may use your own images and save it in the lab map folder, then link to it through a <a href="https://www.w3schools.com/html/html_filepaths.asp" target="_blank">file path</a>. Or you can host your images via <a href="https://imgur.com/" target="_blank">imgur</a> or other platforms. Just make sure to <b>use the URL that links to the actual image file</b>, not a web page.</li>
-                            <li>The <code>alt</code> attribute specifies an alternate text if the image failed to display for some reason.</li>
-                            <li>In addition, I also defined the <code>width</code> of the image (in pixels). I didn't specify the height, which will be calculated proportionally by default.</li>
+                            <li>These two lines are long and will wrap onto several lines in the box above. In this example, I used the variables <code>pic1</code> and <code>pic2</code> to hold the HTML formatted images.  </li>
+                            <li>For the image source (the <code>src</code> attribute), I found pictures from Wikimedia Commons' public domain and used the image urls as the sources. You may use your own images and save them in your Lab 2 folder, then link to them through a <a href="https://www.w3schools.com/html/html_filepaths.asp" target="_blank">file path</a>. Or you can host your images via <a href="https://imgur.com/" target="_blank">imgur</a> or other platforms. Just make sure to <b>use the URL that links to the actual image file</b>, not a web page.</li>
+                            <li>The <code>alt</code> attribute specifies alternate text for the image. It is displayed if the image fails to load, and it is what a screen reader reads aloud in place of the picture. Write something that describes the image, such as <code>alt=&quot;Bernard Brommel Hall at NEIU&quot;</code>. Avoid empty or generic text such as <code>alt=&quot;image&quot;</code>, because it tells the reader nothing.</li>
+                            <li>In addition, I also defined the <code>width</code> of the image (in pixels). I did not specify the height, which will be calculated proportionally by default.</li>
 
                             </ul>
                         </li>
@@ -295,7 +285,7 @@ var pic2 = '&lt;img src=&quot;https://upload.wikimedia.org/wikipedia/commons/3/3
 marker1.bindPopup('work at NEIU' + '&lt;br&gt;' + pic1);
 marker2.bindPopup('went to FSU for graduate school' + '&lt;br&gt;' + pic2);</code></pre></div>
                             
-                        The <code>+</code> sign is used to combine contents. Note the <code>br</code> tag is used to insert a link break between the text and the image.
+                        The <code>+</code> sign is used to combine contents. Note the <code>br</code> tag is used to insert a line break between the text and the image.
                         </li>
                         
                         <li>The example below <b>changes colors and font weight</b> of the text using the <code>style</code> attribute inside a <code>p</code> tag:
@@ -320,10 +310,10 @@ marker2.bindPopup('&lt;p style=&quot;color:seagreen; font-weight:bold&quot;&gt; 
                     <h3><i class="fa fa-paint-brush"></i> Customize Marker Icons</h3>
                     <p>In Leaflet, the blue locator icon is used by default for displaying the markers. However, it is also possible to use your own custom icons. </p>
                     <ul>
-                        <li><b>Prepare the image</b> to be used as the custom icon. Ideally, the icon images should have a transparent background. Image file formats that support transparency include <b>GIF</b>, <b>PNG</b>, <b>BMP</b>, <b>TIFF</b>, and <b>JPEG 2000</b> (NOT JPEG!!!).</li>
+                        <li><b>Prepare the image</b> to be used as the custom icon. Ideally, the icon image should have a transparent background. <b>PNG</b> is the safest choice and is what most icon sites provide. Do <b>not</b> use JPEG, because JPEG does not support transparency and your icon will appear inside a white box.</li>
                         <li>As an example, I am using an image icon <code>university.png</code> downloaded from <a href="https://www.flaticon.com/" target="_blank">https://www.flaticon.com/</a><br>
                         <img src="university.png" alt="icons" style="background-color: rgba(255,255,255,0)">
-                            <br>To test things out first, you may right-click the sample image above and save the image to your lab 2 map folder. 
+                            <br>To test things out first, you may right-click the sample image above and save the image to your Lab 2 folder. 
                         </li>
                         <li>Make sure to <b>save the icon image file in the SAME folder</b> as the html file.</li>
                         <li>Marker icons in Leaflet are defined by <code>L.icon</code> objects.<br> Place the following lines <b>right BEFORE </b>adding the markers ( i.e., above the <code>L.marker</code> functions; Defining the icons before adding the markers allows us to use these custom icons when adding the markers):
@@ -338,11 +328,11 @@ var universityIcon = L.icon({
     iconAnchor:   [19, 19], // the top left corner of the icon will be aligned so that this point is at the marker's geographical location
     popupAnchor:  [0, -10] // point from which the popup should open, relative to the iconAnchor
 });</code></pre></div>
-                            <p>The explanation of each line is provided as <b>JavaScript comments</b>, starting with <code>//</code>, which won't be executed. And you may want to read these comments carefully and let me know if you have any questions.</p>
+                            <p>The explanation of each line is provided as <b>JavaScript comments</b>, starting with <code>//</code>, which will not be executed. And you may want to read these comments carefully and let me know if you have any questions.</p>
                         <ul><li>
                             The most important element when defining a custom icon is the image file (<code>iconUrl</code>). In this case, we saved the image file in the same folder as the html file so we could link to it by the file name (<b>relative url</b>). You may use <b>absolute url</b> of a hosted image file (Refer to the <a href="https://www.w3schools.com/html/html_filepaths.asp" target="_blank">HTML File Paths</a> tutorial).
                             </li>
-                            <li>It is often times necessary to adjust the size (<code>iconSize</code>) and alignment (<code>iconAnchor</code>) of the icon, as well as the alignment of the popup (<code>popupAnchor</code>). </li>
+                            <li>It is often necessary to adjust the size (<code>iconSize</code>) and alignment (<code>iconAnchor</code>) of the icon, as well as the alignment of the popup (<code>popupAnchor</code>). </li>
                             </ul>
                         </li><br>
                         
@@ -352,10 +342,11 @@ var universityIcon = L.icon({
                             <button class="copy-btn" title="Click to copy" onclick="copyToClipboard(this)"><i class="fa-regular fa-copy"></i> <b>Copy Code</b></button>
                                
                                <pre><code class="language-js">
-var marker1 = L.marker([41.98,-87.72], {icon: universityIcon}).addTo(map);
-var marker2 = L.marker([30.44,-84.3], {icon: universityIcon}).addTo(map);</code></pre> </div>
-                        <p>Basically, we added <code>{icon: universityIcon}</code> to draw the markers using our custom icon: the <code><span style="color:black">universityIcon</span></code> variable. A comma <code>,</code> was used as a separator within a statement.</p></li>
-                        <li>Here is how the final map should look like (<a href="https://raw.githubusercontent.com/neiugis/lab2/gh-pages/map/final.html" target="_blank">sample code</a>):
+var marker1 = L.marker([41.98,-87.72], {icon: universityIcon, alt: 'Northeastern Illinois University'}).addTo(map);
+var marker2 = L.marker([30.44,-84.3], {icon: universityIcon, alt: 'Florida State University'}).addTo(map);</code></pre> </div>
+                        <p>Basically, we added <code>{icon: universityIcon}</code> to draw the markers using our custom icon: the <code><span style="color:black">universityIcon</span></code> variable. A comma <code>,</code> was used as a separator within a statement.</p>
+                        <p>We also added a second option, <code>alt</code>. A custom icon is just a picture, so it needs alternate text for the same reason the popup images do. Without it, Leaflet uses the word <i>Marker</i>, which tells a screen reader user nothing about the place. Notice that the two options are separated by a comma inside the same <code>{ }</code> braces.</p></li>
+                        <li>Here is how the final map should look (<a href="https://raw.githubusercontent.com/neiugis/lab2/gh-pages/map/final.html" target="_blank">sample code</a>):
                             <iframe src="map/final.html" width=100% height=520 frameborder=0></iframe><br>
                         </li>
                         
@@ -365,15 +356,25 @@ var marker2 = L.marker([30.44,-84.3], {icon: universityIcon}).addTo(map);</code>
                     
                   <p><a id="deliverable" title="Deliverables" class="toc-item"></a></p>
                   <h3><i class="fa fa-paint-brush"></i> Deliverables</h3>
-                    <ul><li>For lab 2 deliverables, create a map with <b>AT LEAST THREE markers</b> (with popup for each) of your selected topic, <i>for example</i>, countries/cities you have visited, your favorite restaurants, etc. In addition, your map must use <span style="color:red"><b>custom image icons</b></span> for the markers. It is also required to include <span style="color:red"><b>both text and image in the popups</b></span>. 
+                    <ul><li>For Lab 2 deliverables, create a map with <b>AT LEAST THREE markers</b> (with popup for each) of your selected topic, <i>for example</i>, countries/cities you have visited, your favorite restaurants, etc. In addition, your map must use <span style="color:red"><b>custom image icons</b></span> for the markers. It is also required to include <span style="color:red"><b>both text and image in the popups</b></span>, and to provide <span style="color:red"><b>alternate text</b></span> for every image and every marker.
                         </li>
-                        <li>Your final map will be graded based on its overall accuracy (should meet all the requirements above) and cartographic layout/design.</li>
+                        <li>Lab 2 is worth <b>50 points</b>, broken down as follows:
+                            <table style="border-collapse:collapse; margin:10px 0; font-size:14px">
+                                <tr><th style="border:1px solid #d1d5db; padding:6px 10px; text-align:left">Requirement</th><th style="border:1px solid #d1d5db; padding:6px 10px; text-align:left">Points</th></tr>
+                                <tr><td style="border:1px solid #d1d5db; padding:6px 10px">Three or more markers placed at the correct locations</td><td style="border:1px solid #d1d5db; padding:6px 10px">10</td></tr>
+                                <tr><td style="border:1px solid #d1d5db; padding:6px 10px">Custom image icons used for the markers</td><td style="border:1px solid #d1d5db; padding:6px 10px">10</td></tr>
+                                <tr><td style="border:1px solid #d1d5db; padding:6px 10px">Every marker has a popup containing both text and an image</td><td style="border:1px solid #d1d5db; padding:6px 10px">15</td></tr>
+                                <tr><td style="border:1px solid #d1d5db; padding:6px 10px">Alternate text provided for popup images (<code>alt</code> attribute) and for markers (<code>alt</code> option)</td><td style="border:1px solid #d1d5db; padding:6px 10px">5</td></tr>
+                                <tr><td style="border:1px solid #d1d5db; padding:6px 10px">Map published on GitHub Pages, url works, and all images load</td><td style="border:1px solid #d1d5db; padding:6px 10px">10</td></tr>
+                                <tr><td style="border:1px solid #d1d5db; padding:6px 10px"><b>Total</b></td><td style="border:1px solid #d1d5db; padding:6px 10px"><b>50</b></td></tr>
+                            </table>
+                        </li>
                     <li><i>Optional:</i> You may try to define multiple types of icons for drawing markers on the same map.</li>
                     <li>Host your web page via GitHub. 
                         <ul>
                             <li>Rename and upload the html file as <code>index.html</code>. </li>
                         <li>Make sure to <strong>UPLOAD associated image file(s)</strong>, e.g., popup images, icon images, if using relative paths! </li>
-                            <li>Verify your hosted map and submit the url through D2L (<a href="https://neiu.desire2learn.com/d2l/lms/dropbox/admin/mark/folder_submissions_users.d2l?db=237077&ou=3020560" target="_blank">Lab 2 Submission</a>).</li> 
+                            <li>Verify your hosted map and submit the url through D2L (<a href="https://neiu.desire2learn.com/d2l/lms/dropbox/admin/mark/folder_submissions_users.d2l?db=285628&amp;ou=3048274" target="_blank">Lab 2 Submission</a>).</li> 
                         </ul></li></ul>
                     
             <br><br>        
@@ -384,7 +385,7 @@ var marker2 = L.marker([30.44,-84.3], {icon: universityIcon}).addTo(map);</code>
           <footer>
             <div class="wrap">
 
-              <p>Copyright &copy; Ting Liu 2024</p>
+              <p>Copyright &copy; Ting Liu 2026</p>
             <div>Icons made by <a href="http://www.freepik.com" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a> is licensed by <a href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0" target="_blank">CC 3.0 BY</a></div>
             </div>
           </footer>
